@@ -1,0 +1,5 @@
+split given into words without using built in split method
+python is oop
+append 
+type 
+diff bet fun and method
