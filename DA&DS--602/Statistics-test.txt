@@ -1,0 +1,128 @@
+Q1. What is Data Distribution? Why is it important in Data Analysis?
+It shows how data values are spread like structure and unstructure. It also helps to choose statistical methods and detect outliers.
+
+
+
+Q2. What are Measures of Central Tendency? Explain Mean, Median, and Mode with examples.
+Mean = Mean is the average of given data
+import numpy as np
+data = [2,4,4,5,6,8]
+print("Mean:", np.mean(data))
+
+Median = Median is the middle value in the given data 
+import numpy as np
+data = [2,4,4,5,6,8]
+print("Median:", np.median(data))
+
+Mode = Mode is the most frequent value occured in the data
+import numpy as np
+from statistics import mode
+data = [2,4,4,5,6,8]
+print("Mode:", mode(data))
+
+
+
+Q3. When is Median preferred over Mean? Explain with a scenario.
+Use median when outliers present
+Example: Salary = [20000, 22000, 25000, 1000000] → Median better.
+
+
+
+Q4. What is Dispersion? Why is it important in Data Analytics?
+Answer: In despersion it spreads of data around mean amd it is important in DA beacouse it shows data variability.
+
+
+
+Q5. Explain Range, Variance, and Standard Deviation.
+Range = Max. value − Min. value
+import numpy as np
+data = [10,20,30,40,50]
+print("Range:", max(data)-min(data))
+
+Variance = It is Sigma Square
+import numpy as np
+data = [10,20,30,40,50]
+print("Variance:", np.var(data))
+
+Standard Deviation = √ Variance
+import numpy as np
+data = [10,20,30,40,50]
+print("Std Dev:", np.std(data))
+
+
+Q6. What are Quartiles and Percentiles? Explain with example.
+Quartiles: It divide data into 4 parts (Q1, Q2, Q3) that is 25-50-75 %
+Percentiles: Percentiles are values that separate the data into 100 equal parts
+import numpy as np
+data = [1,2,3,4,5,6,7,8,9]
+print("Q1:", np.percentile(data,25))
+print("Q2:", np.percentile(data,50))
+print("Q3:", np.percentile(data,75))
+
+
+
+Q7. What is Interquartile Range (IQR)? Give formula and use.
+IQR is a measure of statistical dispersion that represents the spread of the middle 50% of a dataset
+IQR = Q3 − Q1
+
+
+
+Q8. What are Outliers? How does IQR help detect outliers?
+An outlier is a data point that differs significantly from the data
+Lower = Q1 − 1.5×IQR
+Upper = Q3 + 1.5×IQR
+
+import numpy as np
+data = [10,12,14,15,18,100]
+Q1 = np.percentile(data,25)
+Q3 = np.percentile(data,75)
+IQR = Q3 - Q1
+lower = Q1 - 1.5*IQR
+upper = Q3 + 1.5*IQR
+outliers = [x for x in data if x < lower or x > upper]
+print("Outliers:", outliers)
+
+
+
+Q9. Define Skewness and explain its types with examples.
+Skewness is a measure of the asymmetry of a probability distribution around its mean, indicating how much the data deviates from a normal distribution.
+Positive Skewness (Right-Skewed) : Mean > Median > Mode
+Negative Skewness (Left-Skewed) : Mean < Median <  Mode
+Zero Skewness : Mean = Median = Mode
+
+
+
+Q10. What is Kurtosis? Explain its types.
+Kurtosis is a statistical measure that describes the shape of a probability distribution
+
+
+
+Q11. What is Probability? Explain with a real-life example.
+Probability measures the chance of an event occurring.
+ex.- Weather Forecasting
+
+
+
+Q13. What is Probability Distribution? Explain its importance.
+A probability distribution that describes the all possible outcomes for a random variable. 
+It is important for the prediction
+
+
+
+Q15. What is Normal Distribution? Why is it important in Data Analytics?
+The normal distribution is used in the machine learning, hypothesis testing and statistics
+
+
+
+Q16. Difference between Population and Sample with example.
+The main difference between population and sample is that populationis the entire that and sample is the part of that data.
+
+
+
+Q17. What is Hypothesis Testing? Explain its purpose.
+It is a method to test assumptions using the sample data. Purpose is decision making, reality checks.
+
+
+Q20. Explain Z-test and T-test with differences, use cases
+Z-test uses large sample data for th testing while T-test uses small sample data.
+sigma value is known for the Z-test and unknown for T-test.
